@@ -38,7 +38,7 @@ function Skills() {
   ];
 
   return (
-    <Box sx={{ textAlign: "center", mt: 10, width: "100%",marginTop:{lg:"20%"} }}>
+    <Box sx={{ textAlign: "center", width: "60vw",height:"500px",marginTop:{lg:"6%"} }}>
       <Box
         sx={{
           display: "flex",
@@ -52,6 +52,10 @@ function Skills() {
          {/* Aplicar el estilo de escala a las flechas */}
          <Box sx={{
           display: 'inline-block', // Necesario para la transformación
+          width: "100%",
+          textAlign:"center",   
+          margin:"auto",
+          borderBottom: "1px solid white",
           ...styles.titleHoverScale, // Aplica el estilo de escala aquí
         }}>
             <Typography variant="h3" color="white" sx={{ mr: 3, ...styles.titleHoverScale }}>
@@ -67,15 +71,15 @@ function Skills() {
         
       </Box>
 
-      <Box
+      {/* <Box
         sx={{
-          width: "60%",
+          width: "100%",
           textAlign:"center",   
           margin:"auto",
           borderBottom: "1px solid white",
           mb: 4,
         }}
-      />
+      /> */}
 
       <AnimatePresence>
         {open && (

@@ -12,7 +12,7 @@ function Presentation({media}) {
                 justifyContent: "center",
                 position: "absolute",
                 marginTop:"2%",
-                top: "20%",
+                top: "10%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
                 zIndex: 2, // asegúrate de que esté por encima del video
