@@ -4,7 +4,7 @@ import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import { IconButton } from "@mui/material";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import InfoCard from "@components/InfoCard";
+import ProjectItem from "@components/ProjectItem/index";
 
 
 import {
@@ -49,26 +49,26 @@ function Projects() {
       }, []);
     
 
-    const icons = [
-        { icon: SiReact, color: "#61dafb", label: "React" },
-        { icon: SiAngular, color: "#dd0031", label: "Angular" },
-        { icon: SiJavascript, color: "#f7df1e", label: "JavaScript" },
-        { icon: SiTypescript, color: "#007acc", label: "TypeScript" },
-        { icon: SiNodedotjs, color: "#339933", label: "Node.js" },
-        { icon: SiPython, color: "#3776ab", label: "Python" },
-        { icon: SiDjango, color: "#092e20", label: "Django" },
-        { icon: SiMongodb, color: "#47A248", label: "MongoDB" },
-        { icon: SiStripe, color: "#635bff", label: "Stripe" },
-        { icon: SiGnubash, color: "#4eaa25", label: "Terminal" },
-        { icon: SiGithub, color: "#ffffff", label: "GitHub" },
-      ];
+    // const icons = [
+    //     { icon: SiReact, color: "#61dafb", label: "React" },
+    //     { icon: SiAngular, color: "#dd0031", label: "Angular" },
+    //     { icon: SiJavascript, color: "#f7df1e", label: "JavaScript" },
+    //     { icon: SiTypescript, color: "#007acc", label: "TypeScript" },
+    //     { icon: SiNodedotjs, color: "#339933", label: "Node.js" },
+    //     { icon: SiPython, color: "#3776ab", label: "Python" },
+    //     { icon: SiDjango, color: "#092e20", label: "Django" },
+    //     { icon: SiMongodb, color: "#47A248", label: "MongoDB" },
+    //     { icon: SiStripe, color: "#635bff", label: "Stripe" },
+    //     { icon: SiGnubash, color: "#4eaa25", label: "Terminal" },
+    //     { icon: SiGithub, color: "#ffffff", label: "GitHub" },
+    //   ];
 
 if(!projects.length){
     return <div>Cargando...</div>;
 }
 
     return (
-        <Box>
+        <>
          <Box sx={{ textAlign: "center", width: "60vw",height:"500px",marginTop:{lg:"6%"} }}>
         <Box
           sx={{
@@ -117,17 +117,25 @@ if(!projects.length){
                   justifyContent: "center",
                   gap: 4,
                   px: 2,
+                  py:2,
+                  margin: "2rem auto",
+                  backgroundColor: "rgba(255, 255, 255, 0.05)",
+                  border: "1px solid rgba(255, 255, 255, 0.1)",
+                  borderRadius: "16px",
+                  backdropFilter: "blur(8px)",
+                  padding: "2rem",
+                  flexDirection: "column",
                 }}
               >
                 {projects.map((project, i) => (
-                    <InfoCard key={i} data={project} />
+                    <ProjectItem key={i} data={project} />
                 ))}
               </Box>
             </motion.div>
           )}
         </AnimatePresence>
       </Box>
-  </Box>
+  </>
     );
 }
 

@@ -38,7 +38,7 @@ function Skills() {
   ];
 
   return (
-    <Box sx={{ textAlign: "center", width: "60vw",height:"500px",marginTop:{lg:"6%"} }}>
+    <Box sx={{ textAlign: "center", width: "60vw",height:{lg:"500px",xs:"400px"},marginTop:{lg:"6%"} , justifyContent: "center", alignItems: "center",}}>
       <Box
         sx={{
           display: "flex",
@@ -71,16 +71,6 @@ function Skills() {
         
       </Box>
 
-      {/* <Box
-        sx={{
-          width: "100%",
-          textAlign:"center",   
-          margin:"auto",
-          borderBottom: "1px solid white",
-          mb: 4,
-        }}
-      /> */}
-
       <AnimatePresence>
         {open && (
           <motion.div
@@ -94,6 +84,8 @@ function Skills() {
                 display: "flex",
                 flexWrap: "wrap",
                 justifyContent: "center",
+                alignItems: "center",
+          
                 gap: 4,
                 px: 2,
               }}
@@ -104,7 +96,10 @@ function Skills() {
                   sx={{
                     display: "flex",
                     flexDirection: "column",
+                    gap: 2,
                     alignItems: "center",
+                    justifyContent: "center",
+                    marginTop:{lg:"7%"}
                   }}
                 >
                   <IconButton sx={{ ...styles.titleHoverScale }}>

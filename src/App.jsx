@@ -4,6 +4,8 @@ import { Box, CardMedia } from "@mui/material";
 import Presentation from "@sections/Presentation/index";
 import Skills from "@components/Skills/index";
 import Projects from "@sections/Projects/index";
+import Education from "@sections/Education/index";
+import Footer from "@sections/Footer/index";
 
 function App() {
   const [media, setMedia] = useState([]);
@@ -43,10 +45,22 @@ function App() {
           width: "100%",
           height: "100%",
           objectFit: "cover",
-          zIndex: -1,
+          zIndex: -2,
           overflow:"hidden"
         }}
       />
+      {/* Overlay encima del video */}
+    <Box
+      sx={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        backgroundColor: "rgba(0, 0, 0, 0.5)", 
+        zIndex: -1, 
+      }}
+    />
     </Box>
       {/* Contenido sobre el video */}
       <Box
@@ -71,6 +85,13 @@ function App() {
         
         <Box>
           <Projects  />
+        </Box>
+
+        <Box>
+          <Education />
+        </Box>
+        <Box>
+          <Footer />
         </Box>
       </Box>
    </>
