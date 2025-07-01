@@ -86,6 +86,7 @@ if(!projects.length){
             width: "100%",
             textAlign:"center",   
             margin:"auto",
+            marginBottom:4,
             borderBottom: "1px solid white",
             ...titleHoverScale, // Aplica el estilo de escala aquí
           }}>

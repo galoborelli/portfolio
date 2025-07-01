@@ -102,7 +102,7 @@ function Skills() {
                     marginTop:{lg:"7%"}
                   }}
                 >
-                  <IconButton sx={{ ...styles.titleHoverScale }}>
+                  <IconButton sx={{ ...styles.iconHoverScale }}>
                     <Icon size={60} color={color} />
                   </IconButton>
                   <Typography variant="body2" color="white">
