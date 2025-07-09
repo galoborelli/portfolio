@@ -30,38 +30,53 @@ function Education () {
     }
     return (
         <>
-     <Box sx={{ textAlign: "center", width: "60vw",marginTop:{lg:"6%"} }}>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            cursor: "pointer",
-            mb: 4,
-          }}
-          onClick={() => setOpen(!open)}
-        >
-           {/* Aplicar el estilo de escala a las flechas */}
-           <Box sx={{
-            display: 'inline-block', // Necesario para la transformación
-            width: "100%",
-            textAlign:"center",   
-            margin:"auto",
-            borderBottom: "1px solid white",
-            ...styles.titleHoverScale, // Aplica el estilo de escala aquí
-          }}>
-              <Typography variant="h3" color="white" sx={{ mr: 3, ...styles.titleHoverScale }}>
-            Educación
-          </Typography>
-  
-            {open ? (
-              <MdKeyboardArrowUp size={40} color="white" />
-            ) : (
-              <MdKeyboardArrowDown size={40} color="white" />
-            )}
-          </Box>
-          
-        </Box>
+       <Box
+           sx={{
+             textAlign: "center",
+             width: { xs: "89%", md: "80%", lg: "60vw" },
+             minHeight: { lg: "auto", xs: "auto" },
+             marginTop: { lg: "6%", xs: "35%" },
+             marginBottom: { xs: "20%", md: "10%" }, // 💥 esto es nuevo
+             mx: "auto",
+             px: { xs: 2, md: 0 },
+           }}
+         >
+           <Box
+             sx={{
+               display: "flex",
+               flexDirection: "column",
+               justifyContent: "center",
+               alignItems: "center",
+               cursor: "pointer",
+             }}
+             onClick={() => setOpen(!open)}
+           >
+             <Box
+               sx={{
+                 display: "inline-block",
+                 width: "100%",
+                 textAlign: "center",
+                 margin: "auto",
+                 borderBottom: "1px solid white",
+                 ...styles.titleHoverScale,
+               }}
+             >
+               <Typography
+                 variant="h3"
+                 color="white"
+                 sx={{ mr: 3, ...styles.titleHoverScale }}
+               >
+                 Educacion
+               </Typography>
+     
+               {open ? (
+                 <MdKeyboardArrowUp size={40} color="white" />
+               ) : (
+                 <MdKeyboardArrowDown size={40} color="white" />
+               )}
+             </Box>
+           </Box>
+     
   
         <AnimatePresence>
           {open && (
@@ -71,19 +86,20 @@ function Education () {
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <Box
-                sx={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  justifyContent: "center",
-                  gap: 4,
-                  px: 2,
-                }}
-              >
-                {education.map((education, i) => (
-                    <EducationItem key={i} data={education} />
-                ))}
-              </Box>
+            <Box
+              sx={{
+                display: { xs: "flex", lg: "flex" },
+                flexDirection: { xs: "column", lg: "row" },
+                flexWrap: "wrap",
+                justifyContent: "center",
+                gap: 4,
+                px: 2,
+              }}
+            >
+              {education.map((education, i) => (
+                <EducationItem key={i} data={education} />
+              ))}
+            </Box>
             </motion.div>
           )}
         </AnimatePresence>

@@ -19,7 +19,6 @@ import {
 
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 
-
 function Skills() {
   const [open, setOpen] = useState(true);
 
@@ -38,29 +37,44 @@ function Skills() {
   ];
 
   return (
-    <Box sx={{ textAlign: "center", width: "60vw",height:{lg:"500px",xs:"400px"},marginTop:{lg:"6%"} , justifyContent: "center", alignItems: "center",}}>
+    <Box
+      sx={{
+        textAlign: "center",
+        width: { xs: "100%", md: "80%", lg: "60vw" },
+        height: { lg: "300px", xs: "auto" },
+        marginTop: { lg: "15%", xs: "35%" },
+        marginBottom: { lg: "6%", },
+        mx: "auto",
+        px: { xs: 2, md: 0 },
+      }}
+    >
       <Box
         sx={{
           display: "flex",
+          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
           cursor: "pointer",
-          mb: 4,
         }}
         onClick={() => setOpen(!open)}
       >
-         {/* Aplicar el estilo de escala a las flechas */}
-         <Box sx={{
-          display: 'inline-block', // Necesario para la transformación
-          width: "100%",
-          textAlign:"center",   
-          margin:"auto",
-          borderBottom: "1px solid white",
-          ...styles.titleHoverScale, // Aplica el estilo de escala aquí
-        }}>
-            <Typography variant="h3" color="white" sx={{ mr: 3, ...styles.titleHoverScale }}>
-          Habilidades
-        </Typography>
+        <Box
+          sx={{
+            display: "inline-block",
+            width: "100%",
+            textAlign: "center",
+            margin: "auto",
+            borderBottom: "1px solid white",
+            ...styles.titleHoverScale,
+          }}
+        >
+          <Typography
+            variant="h3"
+            color="white"
+            sx={{ mr: 3, ...styles.titleHoverScale }}
+          >
+            Habilidades
+          </Typography>
 
           {open ? (
             <MdKeyboardArrowUp size={40} color="white" />
@@ -68,7 +82,6 @@ function Skills() {
             <MdKeyboardArrowDown size={40} color="white" />
           )}
         </Box>
-        
       </Box>
 
       <AnimatePresence>
@@ -79,38 +92,38 @@ function Skills() {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Box
-              sx={{
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "center",
-                alignItems: "center",
-          
-                gap: 4,
-                px: 2,
-              }}
-            >
-              {icons.map(({ icon: Icon, color, label }, i) => (
-                <Box
-                  key={i}
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 2,
-                    alignItems: "center",
-                    justifyContent: "center",
-                    marginTop:{lg:"7%"}
-                  }}
-                >
-                  <IconButton sx={{ ...styles.iconHoverScale }}>
-                    <Icon size={60} color={color} />
-                  </IconButton>
-                  <Typography variant="body2" color="white">
-                    {label}
-                  </Typography>
-                </Box>
-              ))}
-            </Box>
+           <Box
+  sx={{
+    display: { xs: "grid", lg: "flex" },
+    gridTemplateColumns: { xs: "repeat(4, 1fr)" },
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 2,
+    px: 2,
+    py: { lg: 16, xs: 0 },
+  }}
+>
+  {icons.map(({ icon: Icon, color, label }, i) => (
+    <Box
+      key={i}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 1,
+      }}
+    >
+      <IconButton sx={{ ...styles.iconHoverScale }}>
+      <Icon size={{ lg: 40, xs: 20 }} color={color} />
+      </IconButton>
+      <Typography variant="body2" color="white" sx={{ fontSize: "0.75rem" }}>
+        {label}
+      </Typography>
+    </Box>
+  ))}
+</Box>
+
           </motion.div>
         )}
       </AnimatePresence>

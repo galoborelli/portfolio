@@ -6,6 +6,7 @@ import Skills from "@components/Skills/index";
 import Projects from "@sections/Projects/index";
 import Education from "@sections/Education/index";
 import Footer from "@sections/Footer/index";
+import SideBar from "@components/SideBar/index";
 
 function App() {
   const [media, setMedia] = useState([]);
@@ -75,6 +76,7 @@ function App() {
           overflow:"hidden"
         }}
       >
+      <SideBar />
         <Box sx={{height:"500px"}}>
         <Presentation media={media} />
         </Box>

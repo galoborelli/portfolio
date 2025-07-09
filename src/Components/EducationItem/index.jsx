@@ -10,7 +10,7 @@ function EducationItem({ data }) {
       sx={{
         width: "90%",
         maxWidth: "800px",
-        margin: "2rem auto",
+        margin: "1rem auto",
         backgroundColor: "rgba(255, 255, 255, 0.05)",
         border: "1px solid rgba(255, 255, 255, 0.1)",
         borderRadius: "16px",

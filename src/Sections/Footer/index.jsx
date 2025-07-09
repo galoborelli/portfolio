@@ -25,32 +25,31 @@ const contacts = [
   },
 ];
 
+
 function Footer() {
   const [open, setOpen] = useState(true);
 
   return (
     <Box
       sx={{
-        width: "60vw",
-        margin: "0 auto",
         textAlign: "center",
-        mt: { xs: 6, lg: "6%" },
+        width: { xs: "90%", md: "80%", lg: "60vw" },
+        height: { lg: "500px", xs: "auto" },
+        marginTop: { lg: "6%", xs: "20%" },
+        marginBottom: { lg: "6%", xs: "30%" },
+        mx: "auto",
+        px: { xs: 2, md: 0 },
       }}
     >
-      {/* Título y flecha */}
       <Box
-        role="button"
-        tabIndex={0}
-        aria-expanded={open}
-        onClick={() => setOpen(!open)}
-        onKeyDown={(e) => e.key === "Enter" && setOpen(!open)}
         sx={{
           display: "flex",
+          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
           cursor: "pointer",
-          mb: 4,
         }}
+        onClick={() => setOpen(!open)}
       >
         <Box
           sx={{
@@ -67,11 +66,13 @@ function Footer() {
             color="white"
             sx={{
               mr: 3,
+              fontSize: { xs: "1.8rem", md: "2.5rem" },
               ...styles.titleHoverScale,
             }}
           >
             Contacto
           </Typography>
+
           {open ? (
             <MdKeyboardArrowUp size={40} color="white" />
           ) : (
@@ -80,7 +81,6 @@ function Footer() {
         </Box>
       </Box>
 
-      {/* Contenido animado */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -103,10 +103,12 @@ function Footer() {
               <Box
                 sx={{
                   display: "flex",
+                  flexDirection: { xs: "column", sm: "row" },
                   flexWrap: "wrap",
                   justifyContent: "center",
                   alignItems: "center",
                   gap: 2,
+                  mt: { xs: 2, md: 0 },
                 }}
               >
                 {contacts.map(({ icon, label }) => (
@@ -119,7 +121,10 @@ function Footer() {
                       px: 2,
                       py: 1,
                       borderRadius: 2,
-                      cursor:"pointer",
+                      width: { xs: "100%", sm: "auto" },
+                      justifyContent: { xs: "flex-start", sm: "center" },
+                      backgroundColor: "rgba(255,255,255,0.05)",
+                      cursor: "pointer",
                       transition: "all 0.3s ease",
                       "&:hover": {
                         transform: "scale(1.03)",
@@ -128,7 +133,11 @@ function Footer() {
                     }}
                   >
                     <Box color="white">{icon}</Box>
-                    <Typography variant="body1" color="white">
+                    <Typography
+                      variant="body2"
+                      color="white"
+                      sx={{ fontSize: { xs: "0.9rem", sm: "1rem" } }}
+                    >
                       {label}
                     </Typography>
                   </Box>
@@ -138,8 +147,15 @@ function Footer() {
           </motion.div>
         )}
       </AnimatePresence>
+      <Box sx={{ height: "100px", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", marginTop:{lg:"3%"} }}>
+        <Typography variant="body2" color="white">
+          © {new Date().getFullYear()} |    Gracias por tu visita. 
+        </Typography>
+
+      </Box>
     </Box>
   );
 }
+
 
 export default Footer;

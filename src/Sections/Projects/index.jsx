@@ -49,93 +49,96 @@ function Projects() {
       }, []);
     
 
-    // const icons = [
-    //     { icon: SiReact, color: "#61dafb", label: "React" },
-    //     { icon: SiAngular, color: "#dd0031", label: "Angular" },
-    //     { icon: SiJavascript, color: "#f7df1e", label: "JavaScript" },
-    //     { icon: SiTypescript, color: "#007acc", label: "TypeScript" },
-    //     { icon: SiNodedotjs, color: "#339933", label: "Node.js" },
-    //     { icon: SiPython, color: "#3776ab", label: "Python" },
-    //     { icon: SiDjango, color: "#092e20", label: "Django" },
-    //     { icon: SiMongodb, color: "#47A248", label: "MongoDB" },
-    //     { icon: SiStripe, color: "#635bff", label: "Stripe" },
-    //     { icon: SiGnubash, color: "#4eaa25", label: "Terminal" },
-    //     { icon: SiGithub, color: "#ffffff", label: "GitHub" },
-    //   ];
-
 if(!projects.length){
     return <div>Cargando...</div>;
 }
 
     return (
         <>
-         <Box sx={{ textAlign: "center", width: "60vw",height:"500px",marginTop:{lg:"6%"} }}>
+         <Box
+      sx={{
+        textAlign: "center",
+        width: { xs: "90%", md: "80%", lg: "60vw" },
+        height: { lg: "auto", xs: "auto" },
+        marginTop: { lg: "6%", xs: "30%" },
+        mx: "auto",
+        px: { xs: 2, md: 0 },
+      }}
+    >
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          cursor: "pointer",
+        }}
+        onClick={() => setOpen(!open)}
+      >
         <Box
           sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            cursor: "pointer",
-            mb: 4,
-          }}
-          onClick={() => setOpen(!open)}
-        >
-           {/* Aplicar el estilo de escala a las flechas */}
-           <Box sx={{
-            display: 'inline-block', // Necesario para la transformación
+            display: "inline-block",
             width: "100%",
-            textAlign:"center",   
-            margin:"auto",
-            marginBottom:4,
+            textAlign: "center",
+            margin: "auto",
             borderBottom: "1px solid white",
-            ...titleHoverScale, // Aplica el estilo de escala aquí
-          }}>
-              <Typography variant="h3" color="white" sx={{ mr: 3, ...titleHoverScale }}>
-            Proyectos
+            marginBottom: "1rem",
+            ...titleHoverScale,
+          }}
+        >
+          <Typography
+            variant="h3"
+            color="white"
+            sx={{ mr: 3, ...titleHoverScale }}
+          >
+            Projectos
           </Typography>
-  
-            {open ? (
-              <MdKeyboardArrowUp size={40} color="white" />
-            ) : (
-              <MdKeyboardArrowDown size={40} color="white" />
-            )}
-          </Box>
-          
-        </Box>
-  
-        <AnimatePresence>
-          {open && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Box
-                sx={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  justifyContent: "center",
-                  gap: 4,
-                  px: 2,
-                  py:2,
-                  margin: "2rem auto",
-                  backgroundColor: "rgba(255, 255, 255, 0.05)",
-                  border: "1px solid rgba(255, 255, 255, 0.1)",
-                  borderRadius: "16px",
-                  backdropFilter: "blur(8px)",
-                  padding: "2rem",
-                  flexDirection: "column",
-                }}
-              >
-                {projects.map((project, i) => (
-                    <ProjectItem key={i} data={project} />
-                ))}
-              </Box>
-            </motion.div>
+
+          {open ? (
+            <MdKeyboardArrowUp size={40} color="white" />
+          ) : (
+            <MdKeyboardArrowDown size={40} color="white" />
           )}
-        </AnimatePresence>
+        </Box>
       </Box>
+
+
+  <AnimatePresence>
+    {open && (
+      <motion.div
+        initial={{ height: 0, opacity: 0 }}
+        animate={{ height: "auto", opacity: 1 }}
+        exit={{ height: 0, opacity: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+      
+          {projects.map((project, i) => (
+        <Box
+        sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          
+          gap: 4,
+          px: 2,
+          py: 2,
+          margin: "0 auto",
+          marginTop:"4rem",
+          backgroundColor: "rgba(255, 255, 255, 0.05)",
+          border: "1px solid rgba(255, 255, 255, 0.1)",
+          borderRadius: "16px",
+          backdropFilter: "blur(8px)",
+          flexDirection: "column", // siempre en columna para evitar mezcla
+        }}
+      >
+      <ProjectItem key={i} data={project} />
+            </Box>
+       ))}
+       
+      </motion.div>
+    )}
+  </AnimatePresence>
+</Box>
   </>
     );
 }
