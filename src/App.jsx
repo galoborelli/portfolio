@@ -76,7 +76,7 @@ function App() {
           overflow:"hidden"
         }}
       >
-      <SideBar />
+      <SideBar id="sidebar" />
         <Box sx={{height:"500px"}}>
         <Presentation media={media} />
         </Box>

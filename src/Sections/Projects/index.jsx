@@ -7,21 +7,6 @@ import axios from "axios";
 import ProjectItem from "@components/ProjectItem/index";
 
 
-import {
-    SiReact,
-    SiAngular,
-    SiJavascript,
-    SiTypescript,
-    SiNodedotjs,
-    SiPython,
-    SiDjango,
-    SiMongodb,
-    SiStripe,
-    SiGnubash,
-    SiGithub,
-  } from "react-icons/si";
-
-
 const titleHoverScale = {
     display: 'inline-block', 
     transition: 'transform 0.3s ease-in-out', 
@@ -55,7 +40,8 @@ if(!projects.length){
 
     return (
         <>
-         <Box
+      <Box
+      id="projects"
       sx={{
         textAlign: "center",
         width: { xs: "90%", md: "80%", lg: "60vw" },

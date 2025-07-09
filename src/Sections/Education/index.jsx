@@ -31,6 +31,7 @@ function Education () {
     return (
         <>
        <Box
+           id="education"
            sx={{
              textAlign: "center",
              width: { xs: "89%", md: "80%", lg: "60vw" },

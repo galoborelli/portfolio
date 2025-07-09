@@ -15,6 +15,8 @@ import {
   SiTypescript,
   SiGithub,
   SiGnubash,
+  SiBootstrap,
+  SiPostgresql
 } from "react-icons/si";
 
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
@@ -34,10 +36,13 @@ function Skills() {
     { icon: SiStripe, color: "#635bff", label: "Stripe" },
     { icon: SiGnubash, color: "#4eaa25", label: "Terminal" },
     { icon: SiGithub, color: "#ffffff", label: "GitHub" },
-  ];
+    { icon: SiBootstrap, color: "#ffffff", label: "Bootstrap" },
+    { icon: SiPostgresql, color: "#ffffff", label: "PostgreSQL" },
+      ];
 
   return (
     <Box
+      id="skills"
       sx={{
         textAlign: "center",
         width: { xs: "100%", md: "80%", lg: "60vw" },

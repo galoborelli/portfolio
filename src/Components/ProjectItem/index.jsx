@@ -1,7 +1,7 @@
 import { CardMedia } from "@mui/material";
 import { Box, Typography } from "@mui/material";
 import * as styles from "./style";
-import { SiDjango, SiVite, SiPostgresql, SiStripe, SiPython } from "react-icons/si";
+import { SiDjango, SiVite, SiPostgresql, SiStripe, SiPython, SiAngular, SiTypescript, SiNodedotjs } from "react-icons/si";
 
 const iconMap = {
   django: <SiDjango color="white" size={30} />,
@@ -9,6 +9,10 @@ const iconMap = {
   vite: <SiVite color="white" size={30} />,
   postgresql: <SiPostgresql color="white" size={30} />,
   stripe: <SiStripe color="white" size={30} />,
+  angular: <SiAngular color="white" size={30} />,
+  typescript:<SiTypescript color="white" size={30} />,
+  node:<SiNodedotjs color="white" size={30} />,
+  postgres: <SiPostgresql color="white" size={30} />,
 };
 
 function InfoCard({ data }) {

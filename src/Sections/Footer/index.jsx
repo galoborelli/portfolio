@@ -31,6 +31,7 @@ function Footer() {
 
   return (
     <Box
+      id="contact"
       sx={{
         textAlign: "center",
         width: { xs: "90%", md: "80%", lg: "60vw" },

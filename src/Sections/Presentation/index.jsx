@@ -1,9 +1,9 @@
 import { Box, Typography, CardMedia, Button } from "@mui/material";
 import { TypeAnimation } from "react-type-animation";
-
 function Presentation({ media }) {
   return (
     <Box
+      id="presentation"
       sx={{
         height: { lg: "30vh", xs: "100vh" },
         width: { lg: "60%", xs: "90%" },
@@ -71,6 +71,7 @@ function Presentation({ media }) {
             1000,
             "Entusiasta de la tecnología . . .",
             1000,
+        
           ]}
           wrapper="span"
           cursor={true}
