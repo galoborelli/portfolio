@@ -95,6 +95,7 @@ function Education () {
                 justifyContent: "center",
                 gap: 4,
                 px: 2,
+                marginTop:{xs:"0", lg:"5%"}
               }}
             >
               {education.map((education, i) => (

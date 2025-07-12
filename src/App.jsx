@@ -73,6 +73,7 @@ function App() {
           flexDirection:"column",
           alignItems: "center",
           justifyContent: "center",
+          left:{xs:"3%",lg:"4%"},
           overflow:"hidden"
         }}
       >

@@ -49,6 +49,7 @@ function Footer() {
           justifyContent: "center",
           alignItems: "center",
           cursor: "pointer",
+          
         }}
         onClick={() => setOpen(!open)}
       >
@@ -109,7 +110,7 @@ function Footer() {
                   justifyContent: "center",
                   alignItems: "center",
                   gap: 2,
-                  mt: { xs: 2, md: 0 },
+                  mt: { xs: 2, md: "5%" },
                 }}
               >
                 {contacts.map(({ icon, label }) => (

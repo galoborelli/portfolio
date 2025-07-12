@@ -47,7 +47,7 @@ function Skills() {
         textAlign: "center",
         width: { xs: "100%", md: "80%", lg: "60vw" },
         height: { lg: "300px", xs: "auto" },
-        marginTop: { lg: "15%", xs: "35%" },
+        marginTop: { lg: "15%", xs: "59%" },
         marginBottom: { lg: "6%", },
         mx: "auto",
         px: { xs: 2, md: 0 },
@@ -60,6 +60,7 @@ function Skills() {
           justifyContent: "center",
           alignItems: "center",
           cursor: "pointer",
+          
         }}
         onClick={() => setOpen(!open)}
       >
@@ -98,27 +99,28 @@ function Skills() {
             transition={{ duration: 0.5 }}
           >
            <Box
-  sx={{
-    display: { xs: "grid", lg: "flex" },
-    gridTemplateColumns: { xs: "repeat(4, 1fr)" },
-    justifyContent: "center",
-    alignItems: "center",
-    gap: 2,
-    px: 2,
-    py: { lg: 16, xs: 0 },
-  }}
->
-  {icons.map(({ icon: Icon, color, label }, i) => (
-    <Box
-      key={i}
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: 1,
-      }}
-    >
+            sx={{
+              display: { xs: "grid", lg: "flex" },
+              gridTemplateColumns: { xs: "repeat(4, 1fr)" },
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 2,
+              px: 2,
+              py: { lg: 16, xs: 0 },
+              marginTop:{xs:"20%", lg:"0%"}
+            }}
+          >
+          {icons.map(({ icon: Icon, color, label }, i) => (
+            <Box
+              key={i}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 1,
+              }}
+            >
       <IconButton sx={{ ...styles.iconHoverScale }}>
       <Icon size={{ lg: 40, xs: 20 }} color={color} />
       </IconButton>
