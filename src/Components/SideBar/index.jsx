@@ -62,7 +62,7 @@ export default function Sidebar() {
             transition: 'transform 0.2s ease-in-out',
             '&:hover': {
               transform: 'scale(1.05)',
-              backgroundColor: 'rgba(255,255,255,0.1)',
+              backgroundColor: 'rgba(10, 32, 8, 0.93)',
               borderRadius: '30px',
             },
             p: 0,
