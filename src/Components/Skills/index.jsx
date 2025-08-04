@@ -71,13 +71,13 @@ function Skills() {
             textAlign: "center",
             margin: "auto",
             borderBottom: "1px solid white",
-            ...styles.titleHoverScale,
+            
           }}
         >
           <Typography
             variant="h3"
             color="white"
-            sx={{ mr: 3, ...styles.titleHoverScale }}
+            sx={{ mr: 3, display: "inline-block" }}
           >
             Habilidades
           </Typography>

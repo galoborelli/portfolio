@@ -59,7 +59,7 @@ function Presentation({ media }) {
         {/* Nombre */}
         <Typography
           variant="h2"
-          sx={{ fontSize: { xs: "2rem", lg: "3rem" }, mb: 1 }}
+          sx={{ fontSize: { xs: "2rem", lg: "4rem" }, mb: 1 , color:"white"}}
         >
           Galo Borelli
         </Typography>
@@ -76,7 +76,7 @@ function Presentation({ media }) {
           wrapper="span"
           cursor={true}
           repeat={Infinity}
-          style={{ fontSize: "1.5rem", display: "inline-block" }}
+          style={{ fontSize: "1.5rem", display: "inline-block", color:"white" }}
         />
 
         {/* Perfil + botón */}
@@ -93,7 +93,7 @@ function Presentation({ media }) {
             variant="body1"
             color="white"
             sx={{
-              fontSize: { lg: "1rem", xs: "0.9rem" },
+              fontSize: { lg: "1.2rem", xs: "0.9rem" },
               mb: 2,
             }}
           >
@@ -108,6 +108,7 @@ function Presentation({ media }) {
             variant="contained"
             sx={{
               fontSize: { lg: "1rem", xs: "0.9rem" },
+              mt: 2,
               py: { lg: "1rem", xs: "0.6rem" },
               px: { lg: "3rem", xs: "2rem" },
               borderRadius: "70px",

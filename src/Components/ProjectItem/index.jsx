@@ -1,8 +1,8 @@
 import { CardMedia } from "@mui/material";
 import { Box, Typography } from "@mui/material";
-import * as styles from "./style";
+import * as styles from "../../Components/ProjectItem/style";
 import { SiDjango, SiVite, SiPostgresql, SiStripe, SiPython, SiAngular, SiTypescript, SiNodedotjs } from "react-icons/si";
-
+import { Button } from "@mui/material";
 const iconMap = {
   django: <SiDjango color="white" size={30} />,
   python: <SiPython color="white" size={30} />,
@@ -29,8 +29,10 @@ function InfoCard({ data }) {
         justifyContent: "center",
         width: "100%",
         height: "100%",
+     
       }}
     >
+
       {/* Imagen primero en mobile */}
       <Box
         sx={{
@@ -47,6 +49,7 @@ function InfoCard({ data }) {
           },
         }}
       >
+
         <Box
           className="overlay"
           sx={{
@@ -79,6 +82,7 @@ function InfoCard({ data }) {
           
           }}
         />
+        
       </Box>
 
       {/* Título y descripción luego */}
@@ -108,6 +112,53 @@ function InfoCard({ data }) {
           {data.description}
         </Typography>
       </Box>
+      <Box sx={{display:"flex",flexDirection:{lg:"column", xs:"row"}, gap:2,  margin:1,order:{lg:2, xs:0}}}>
+      <Button
+    variant="outlined"
+    href={data.link_front}
+    target="_blank"
+    rel="noopener noreferrer"
+    sx={{
+      color: '#fff',
+      borderColor: '#90caf9',
+      textTransform: 'none',
+      fontWeight: 500,
+      px: 3,
+      borderRadius: '12px',
+      transition: 'all 0.3s ease',
+      '&:hover': {
+        backgroundColor: '#90caf9',
+        color: '#0d1117',
+        borderColor: '#90caf9',
+      },
+    }}
+  >
+    Ver Frontend
+  </Button>
+
+  <Button
+    variant="outlined"
+    href={data.link_back}
+    target="_blank"
+    rel="noopener noreferrer"
+    sx={{
+      color: '#fff',
+      borderColor: '#f48fb1',
+      textTransform: 'none',
+      fontWeight: 500,
+      px: 3,
+      borderRadius: '12px',
+      transition: 'all 0.3s ease',
+      '&:hover': {
+        backgroundColor: '#f48fb1',
+        color: '#0d1117',
+        borderColor: '#f48fb1',
+      },
+    }}
+  >
+    Ver Backend
+  </Button>
+        </Box>
     </Box>
   );
 }

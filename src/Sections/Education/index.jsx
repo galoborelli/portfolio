@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import { Typography } from "@mui/material";
-import * as styles from "./style";
 import axios from "axios";
 import EducationItem from "@components/EducationItem/index";
 
@@ -59,13 +58,13 @@ function Education () {
                  textAlign: "center",
                  margin: "auto",
                  borderBottom: "1px solid white",
-                 ...styles.titleHoverScale,
+                 
                }}
              >
                <Typography
                  variant="h3"
                  color="white"
-                 sx={{ mr: 3, ...styles.titleHoverScale }}
+                 sx={{ mr: 3, display: "inline-block" }}
                >
                  Educacion
                </Typography>

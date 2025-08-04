@@ -5,15 +5,9 @@ import { IconButton } from "@mui/material";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ProjectItem from "@components/ProjectItem/index";
+import * as styles from "@components/ProjectItem/style";
 
 
-const titleHoverScale = {
-    display: 'inline-block', 
-    transition: 'transform 0.3s ease-in-out', 
-    '&:hover': {
-      transform: 'scale(1.10)', 
-  },
-}
 
 
 function Projects() {
@@ -69,13 +63,13 @@ if(!projects.length){
             margin: "auto",
             borderBottom: "1px solid white",
             marginBottom: "1rem",
-            ...titleHoverScale,
+            
           }}
         >
           <Typography
             variant="h3"
             color="white"
-            sx={{ mr: 3, ...titleHoverScale }}
+            sx={{ mr: 3, display: "inline-block" }}
           >
             Projectos
           </Typography>
@@ -99,6 +93,7 @@ if(!projects.length){
       >
       
           {projects.map((project, i) => (
+        
         <Box
         sx={{
           display: "flex",
@@ -115,10 +110,12 @@ if(!projects.length){
           borderRadius: "16px",
           backdropFilter: "blur(8px)",
           flexDirection: "column", // siempre en columna para evitar mezcla
-        }}
-      >
-      <ProjectItem key={i} data={project} />
-            </Box>
+          ...styles.projectHover,
+        }}>
+        <a href={project.link} target="_blank" rel="noopener noreferrer">
+          <ProjectItem key={i} data={project} />
+        </a>
+       </Box>
        ))}
        
       </motion.div>
