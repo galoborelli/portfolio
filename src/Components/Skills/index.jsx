@@ -47,7 +47,7 @@ function Skills() {
         textAlign: "center",
         width: { xs: "100%", md: "80%", lg: "60vw" },
         height: { lg: "300px", xs: "auto" },
-        marginTop: { lg: "15%", xs: "59%" },
+        marginTop: { lg: "15%", xs: "110%" },
         marginBottom: { lg: "6%", },
         mx: "auto",
         px: { xs: 2, md: 0 },

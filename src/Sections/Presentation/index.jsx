@@ -3,24 +3,22 @@ import { TypeAnimation } from "react-type-animation";
 function Presentation({ media }) {
   return (
     <Box
-      id="presentation"
-      sx={{
-        height: { lg: "30vh", xs: "100vh" },
-        width: { lg: "60%", xs: "90%" },
-        display: "flex",
-        flexDirection: { lg: "row", xs: "column" },
-        alignItems: "center",
-        justifyContent: "center",
-        position: "absolute",
-        top: { lg: "6%", xs: "5%" },
-        left: "50%",
-        transform: "translate(-50%, -50%)",
-        zIndex: 2,
-        gap: 2,
-        marginBottom: { lg: "15%", xs: "20%" },
-        marginTop: { lg: "5%", xs: "5%" },
-      }}
-    >
+  id="presentation"
+  sx={{
+    position: "relative", // <-- CAMBIAR ESTO
+    height: { lg: "auto", xs: "auto" }, // <-- usar altura automática
+    width: { lg: "60%", xs: "90%" },
+    display: "flex",
+    flexDirection: { lg: "row", xs: "column" },
+    alignItems: "center",
+    justifyContent: "center",
+    margin: "auto", // centrado horizontal
+    marginTop: { lg: "10%", xs: "10%" }, // deja espacio arriba
+    marginBottom: { lg: "10%", xs: "10%" }, // deja espacio abajo
+    zIndex: 2,
+    gap: 2,
+  }}
+>
       {/* Imagen: primero en mobile, segundo en desktop */}
       <Box
         sx={{
@@ -67,22 +65,23 @@ function Presentation({ media }) {
         {/* Animación */}
         <TypeAnimation
           sequence={[
-            "Desarrollador web full stack . . .",
+            "Desarrollador web full stack",
             1000,
-            "Entusiasta de la tecnología . . .",
+            "Entusiasta de la tecnología ",
             1000,
         
           ]}
           wrapper="span"
           cursor={true}
           repeat={Infinity}
-          style={{ fontSize: "1.5rem", display: "inline-block", color:"white" }}
+          style={{ fontSize:  "1.5rem" , display: "inline-block", color:"white" , width:"100%"}}
+       
         />
 
         {/* Perfil + botón */}
         <Box
           sx={{
-            width: { lg: "60%", xs: "100%" },
+            width: { lg: "85%", xs: "100%" },
             mt: 2,
             display: "flex",
             flexDirection: "column",
@@ -95,13 +94,15 @@ function Presentation({ media }) {
             sx={{
               fontSize: { lg: "1.2rem", xs: "0.9rem" },
               mb: 2,
+              whiteSpace:"pre-line"
             }}
           >
-            ¡Hola! Soy Galo, desarrollador web Full Stack e integrador de
-            sistemas. He trabajado en proyectos freelance y personales aplicando
-            tecnologías como React, Angular, Node.js y Python. Busco mi primera
-            experiencia en una empresa donde crecer, aportar con actitud y seguir
-            desarrollándome profesionalmente.
+            ¡Hola! Soy Galo, desarrollador web Full Stack curioso y manos inquietas. 
+            Me encanta convertir ideas en productos funcionales, bien diseñados y con código prolijo.
+            Vengo trabajando en proyectos freelance y personales donde pude enfrentarme a desafíos reales: desde armar una app de reservas náuticas, hasta resolver bugs a las 2 AM con una taza de café en mano ☕.
+            Me especializo en construir interfaces modernas con React o Angular, y darles vida desde el backend con Node.js, Python o lo que toque. No le escapo al deploy ni al testing, y disfruto mucho mejorar cada parte del flujo: de local a producción.
+            Estoy en busca de mi primera experiencia en una empresa donde pueda seguir creciendo, rodearme de gente copada y aportar con actitud, compromiso y ganas de aprender todo lo que venga.
+            Si querés ver lo que hago, chusmeá mis proyectos acá abajo.
           </Typography>
 
           <Button

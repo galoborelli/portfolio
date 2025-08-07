@@ -100,7 +100,7 @@ if(!projects.length){
           flexWrap: "wrap",
           justifyContent: "center",
           
-          gap: 4,
+          gap: { xs: 4, md: 4 },
           px: 2,
           py: 2,
           margin: "0 auto",

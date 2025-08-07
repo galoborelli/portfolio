@@ -96,7 +96,7 @@ function InfoCard({ data }) {
           order: { xs: 2, lg: 1 },
         }}
       >
-        <Typography variant="h5" color="white">
+        <Typography variant="h5" color="white" mt={2}>
           {data.title}
         </Typography>
         <Typography
@@ -112,7 +112,7 @@ function InfoCard({ data }) {
           {data.description}
         </Typography>
       </Box>
-      <Box sx={{display:"flex",flexDirection:{lg:"column", xs:"row"}, gap:2,  margin:1,order:{lg:2, xs:0}}}>
+      <Box sx={{display:"flex",flexDirection:{lg:"column", xs:"row"}, gap:2,  margin:2,order:{lg:2, xs:0}}}>
       <Button
     variant="outlined"
     href={data.link_front}
