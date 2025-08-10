@@ -105,12 +105,16 @@ if(!projects.length){
           py: 2,
           margin: "0 auto",
           marginTop:"4rem",
-          backgroundColor: "rgba(255, 255, 255, 0.05)",
-          border: "1px solid rgba(255, 255, 255, 0.1)",
-          borderRadius: "16px",
-          backdropFilter: "blur(8px)",
-          flexDirection: "column", // siempre en columna para evitar mezcla
-          ...styles.projectHover,
+          bgcolor: "rgba(255,255,255,0.04)",
+          border: "1px solid rgba(255,255,255,0.08)",
+          borderRadius: 6,
+          backdropFilter: "blur(6px)",
+          alignItems: "center",
+          transition: "transform 0.18s ease, box-shadow 0.18s ease",
+          "&:hover": {
+            transform: "translateY(-12px)",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.45)"
+          }
         }}>
         <a href={project.link} target="_blank" rel="noopener noreferrer">
           <ProjectItem key={i} data={project} />

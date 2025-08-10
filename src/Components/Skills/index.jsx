@@ -48,7 +48,7 @@ function Skills() {
         width: { xs: "100%", md: "80%", lg: "60vw" },
         height: { lg: "300px", xs: "auto" },
         marginTop: { lg: "15%", xs: "110%" },
-        marginBottom: { lg: "6%", },
+        marginBottom: { lg: "1%", },
         mx: "auto",
         px: { xs: 2, md: 0 },
       }}
@@ -106,7 +106,7 @@ function Skills() {
               alignItems: "center",
               gap: 2,
               px: 2,
-              py: { lg: 16, xs: 0 },
+              py: { lg: 12, xs: 0 },
               marginTop:{xs:"20%", lg:"0%"}
             }}
           >

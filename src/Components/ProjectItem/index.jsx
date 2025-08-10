@@ -93,6 +93,7 @@ function InfoCard({ data }) {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
+          cursor: "pointer",
           order: { xs: 2, lg: 1 },
         }}
       >

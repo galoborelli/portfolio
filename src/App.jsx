@@ -7,6 +7,7 @@ import Projects from "@sections/Projects/index";
 import Education from "@sections/Education/index";
 import Footer from "@sections/Footer/index";
 import SideBar from "@components/SideBar/index";
+import SoftSkills from "@sections/SoftSkills/index";
 
 function App() {
   const [media, setMedia] = useState([]);
@@ -85,7 +86,9 @@ function App() {
         <Box sx={{ marginTop:"6%"}}>
         <Skills />
         </Box>
-        
+        <Box>
+        <SoftSkills />
+        </Box>
         <Box>
           <Projects  />
         </Box>

@@ -34,10 +34,10 @@ function Presentation({ media }) {
           component="img"
           src={media[1].url}
           sx={{
-            width: { lg: "100%", xs: "200px" },
-            height: { lg: "100%", xs: "200px" },
+            width: { lg: "300px", xs: "200px" },
+            height: { lg: "300px", xs: "200px" },
             objectFit: "cover",
-            borderRadius: "70%",
+            borderRadius: "50%",
           }}
         />
       </Box>
@@ -97,7 +97,7 @@ function Presentation({ media }) {
               whiteSpace:"pre-line"
             }}
           >
-            ¡Hola! Soy Galo, desarrollador web Full Stack curioso y manos inquietas. 
+            ¡Hola! Soy Galo, desarrollador web Full Stack, curioso por naturaleza. 
             Me encanta convertir ideas en productos funcionales, bien diseñados y con código prolijo.
             Vengo trabajando en proyectos freelance y personales donde pude enfrentarme a desafíos reales: desde armar una app de reservas náuticas, hasta resolver bugs a las 2 AM con una taza de café en mano ☕.
             Me especializo en construir interfaces modernas con React o Angular, y darles vida desde el backend con Node.js, Python o lo que toque. No le escapo al deploy ni al testing, y disfruto mucho mejorar cada parte del flujo: de local a producción.

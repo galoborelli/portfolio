@@ -10,21 +10,24 @@ const contacts = [
   {
     icon: <SiGmail size={22} />,
     label: "borelligalo19@gmail.com",
+    href: "mailto:borelligalo19@gmail.com"
   },
   {
     icon: <IoPhonePortraitOutline size={22} />,
     label: "+34 611 85 60 50",
+    href: "tel:+34611856050"
   },
   {
     icon: <SiGithub size={22} />,
     label: "galoborelli",
+    href: "https://github.com/galoborelli"
   },
   {
     icon: <SiLinkedin size={22} />,
     label: "Galo Borelli",
-  },
+    href: "https://www.linkedin.com/in/galo-borelli"
+  }
 ];
-
 
 function Footer() {
   const [open, setOpen] = useState(true);
@@ -113,37 +116,42 @@ function Footer() {
                   mt: { xs: 2, md: "5%" },
                 }}
               >
-                {contacts.map(({ icon, label }) => (
-                  <Box
-                    key={label}
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 1,
-                      px: 2,
-                      py: 1,
-                      borderRadius: 2,
-                      width: { xs: "100%", sm: "auto" },
-                      justifyContent: { xs: "flex-start", sm: "center" },
-                      backgroundColor: "rgba(255,255,255,0.05)",
-                      cursor: "pointer",
-                      transition: "all 0.3s ease",
-                      "&:hover": {
-                        transform: "scale(1.03)",
-                        backgroundColor: "rgba(255,255,255,0.1)",
-                      },
-                    }}
+              {contacts.map(({ icon, label, href }) => (
+                <Box
+                  key={label}
+                  component="a"
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 1,
+                    px: 2,
+                    py: 1,
+                    borderRadius: 2,
+                    width: { xs: "100%", sm: "auto" },
+                    justifyContent: { xs: "flex-start", sm: "center" },
+                    backgroundColor: "rgba(255,255,255,0.05)",
+                    cursor: "pointer",
+                    transition: "all 0.3s ease",
+                    textDecoration: "none",
+                    "&:hover": {
+                      transform: "scale(1.03)",
+                      backgroundColor: "rgba(255,255,255,0.1)"
+                    }
+                  }}
+                >
+                  <Box color="white">{icon}</Box>
+                  <Typography
+                    variant="body2"
+                    color="white"
+                    sx={{ fontSize: { xs: "0.9rem", sm: "1rem" } }}
                   >
-                    <Box color="white">{icon}</Box>
-                    <Typography
-                      variant="body2"
-                      color="white"
-                      sx={{ fontSize: { xs: "0.9rem", sm: "1rem" } }}
-                    >
-                      {label}
-                    </Typography>
-                  </Box>
-                ))}
+                    {label}
+                  </Typography>
+                </Box>
+              ))}
               </Box>
             </Box>
           </motion.div>

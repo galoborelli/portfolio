@@ -11,16 +11,21 @@ function EducationItem({ data }) {
         width: "90%",
         maxWidth: "800px",
         margin: "1rem auto",
-        backgroundColor: "rgba(255, 255, 255, 0.05)",
-        border: "1px solid rgba(255, 255, 255, 0.1)",
-        borderRadius: "16px",
-        backdropFilter: "blur(8px)",
+       
         padding: "2rem",
         display: "flex",
         flexDirection: "column",
         gap: 2,
-        cursor:"pointer",
-        ...styles.titleHoverScale,
+        bgcolor: "rgba(255,255,255,0.04)",
+        border: "1px solid rgba(255,255,255,0.08)",
+        borderRadius: 6,
+        backdropFilter: "blur(6px)",
+        cursor: "pointer",
+        transition: "transform 0.18s ease, box-shadow 0.18s ease",
+        "&:hover": {
+            transform: "translateY(-12px)",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.45)"
+        },
          // 🔽 PADDING Y a todos los hijos
         '& > *': {
             py: 1,
