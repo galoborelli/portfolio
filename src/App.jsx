@@ -11,21 +11,31 @@ import SoftSkills from "@sections/SoftSkills/index";
 
 function App() {
   const [media, setMedia] = useState([]);
-
+  const [dataText, setDataText] = useState([]);
   useEffect(() => {
-    const fetchMedia = async () => {
+    const fetchAll = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/media`);
-        setMedia(response.data);
+        const [mediaRes, textRes] = await Promise.all([
+          axios.get(`${import.meta.env.VITE_API_URL}/api/media`),
+          
+          axios.get(`${import.meta.env.VITE_API_URL}/api/data-text`)
+        ]);
+        setMedia(mediaRes.data);
+        setDataText(textRes.data);
+
       } catch (error) {
-        console.log("Error al cargar media:", error);
+        console.log("Error al cargar datos:", error);
       }
     };
-
-    fetchMedia();
+  
+    fetchAll();
   }, []);
 
-  if (!media.length) {
+  useEffect(() => {
+    console.log(dataText, "dataText actualizado");
+  }, [dataText]);
+  
+  if (!media.length || !dataText.length) {
     return <div>Cargando...</div>;
   }
 
