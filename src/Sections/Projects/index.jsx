@@ -5,8 +5,6 @@ import { IconButton } from "@mui/material";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ProjectItem from "@components/ProjectItem/index";
-import * as styles from "@components/ProjectItem/style";
-
 
 
 
