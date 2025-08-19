@@ -1,9 +1,12 @@
 import { Box, Typography, CardMedia, Button } from "@mui/material";
 import { TypeAnimation } from "react-type-animation";
-function Presentation({ media }) {
+
+
+function Presentation({ media , data}) {
+
   return (
     <Box
-  id="presentation"
+  id="inicio"
   sx={{
     position: "relative", // <-- CAMBIAR ESTO
     height: { lg: "auto", xs: "auto" }, // <-- usar altura automática
@@ -14,7 +17,7 @@ function Presentation({ media }) {
     justifyContent: "center",
     margin: "auto", // centrado horizontal
     marginTop: { lg: "10%", xs: "10%" }, // deja espacio arriba
-    marginBottom: { lg: "10%", xs: "10%" }, // deja espacio abajo
+    marginBottom: { lg: "1%", xs: "10%" }, // deja espacio abajo
     zIndex: 2,
     gap: 2,
   }}
@@ -59,7 +62,7 @@ function Presentation({ media }) {
           variant="h2"
           sx={{ fontSize: { xs: "2rem", lg: "4rem" }, mb: 1 , color:"white"}}
         >
-          Galo Borelli
+          {data.title_section}
         </Typography>
 
         {/* Animación */}
@@ -97,12 +100,7 @@ function Presentation({ media }) {
               whiteSpace:"pre-line"
             }}
           >
-            ¡Hola! Soy Galo, desarrollador web Full Stack, curioso por naturaleza. 
-            Me encanta convertir ideas en productos funcionales, bien diseñados y con código prolijo.
-            Vengo trabajando en proyectos freelance y personales donde pude enfrentarme a desafíos reales: desde armar una app de reservas náuticas, hasta resolver bugs a las 2 AM con una taza de café en mano ☕.
-            Me especializo en construir interfaces modernas con React o Angular, y darles vida desde el backend con Node.js, Python o lo que toque. No le escapo al deploy ni al testing, y disfruto mucho mejorar cada parte del flujo: de local a producción.
-            Estoy en busca de mi primera experiencia en una empresa donde pueda seguir creciendo, rodearme de gente copada y aportar con actitud, compromiso y ganas de aprender todo lo que venga.
-            Si querés ver lo que hago, chusmeá mis proyectos acá abajo.
+           {data.content.description}
           </Typography>
 
           <Button
@@ -118,7 +116,7 @@ function Presentation({ media }) {
               fontWeight: "bold",
             }}
           >
-            CV
+            {data.button_text}
           </Button>
         </Box>
       </Box>

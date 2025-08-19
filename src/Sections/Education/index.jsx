@@ -6,6 +6,7 @@ import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import { Typography } from "@mui/material";
 import axios from "axios";
 import EducationItem from "@components/EducationItem/index";
+import Loader from "@components/Loader/index";
 
 function Education () {
     const [open, setOpen] = useState(true);
@@ -25,18 +26,18 @@ function Education () {
       }, []);
     
     if (!education.length) {
-      return <div>Cargando...</div>;
+      return <Loader />;
     }
     return (
         <>
        <Box
-           id="education"
+           id="educación"
            sx={{
              textAlign: "center",
              width: { xs: "89%", md: "80%", lg: "60vw" },
              minHeight: { lg: "auto", xs: "auto" },
              marginTop: { lg: "6%", xs: "35%" },
-             marginBottom: { xs: "20%", md: "10%" }, // 💥 esto es nuevo
+             marginBottom: { xs: "20%", md: "2%" }, // 💥 esto es nuevo
              mx: "auto",
              px: { xs: 2, md: 0 },
            }}

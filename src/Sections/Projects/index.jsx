@@ -5,6 +5,7 @@ import { IconButton } from "@mui/material";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ProjectItem from "@components/ProjectItem/index";
+import Loader from "@components/Loader/index";
 
 
 
@@ -27,13 +28,13 @@ function Projects() {
     
 
 if(!projects.length){
-    return <div>Cargando...</div>;
+    return <Loader />;
 }
 
     return (
         <>
       <Box
-      id="projects"
+      id="projectos"
       sx={{
         textAlign: "center",
         width: { xs: "90%", md: "80%", lg: "60vw" },
@@ -69,7 +70,7 @@ if(!projects.length){
             color="white"
             sx={{ mr: 3, display: "inline-block" }}
           >
-            Projectos
+            Proyectos
           </Typography>
 
           {open ? (
@@ -93,6 +94,7 @@ if(!projects.length){
           {projects.map((project, i) => (
         
         <Box
+        key={i}
         sx={{
           display: "flex",
           flexWrap: "wrap",
