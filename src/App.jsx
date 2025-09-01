@@ -20,6 +20,7 @@ function App() {
         const [mediaResponse, textResponse] = await Promise.all([
           axios.get(`${import.meta.env.VITE_API_URL}/api/media`),
           axios.get(`${import.meta.env.VITE_API_URL}/api/data-text`)
+          
         ]);
 
         setMedia(mediaResponse.data);
@@ -32,9 +33,9 @@ function App() {
     fetchAll();
   }, []);
 
-  if (!media.length || Object.keys(dataText).length === 0) {
-    return <Loader />;
-  }
+   if (!media.length || Object.keys(dataText).length === 0) {
+     return <Loader />;
+   }
 
   return (
     <>

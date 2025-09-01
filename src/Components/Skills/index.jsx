@@ -2,7 +2,6 @@ import { Box, Typography, IconButton } from "@mui/material";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import * as styles from "./styles";
-
 import * as SiIcons from "react-icons/si";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 
@@ -10,7 +9,7 @@ function Skills({ data }) {
   const [open, setOpen] = useState(true);
 
   if (!data) return null;
-
+  console.log(data)
   return (
     <Box
       id={data.section_text?.toLowerCase() || "habilidades"}
@@ -19,7 +18,7 @@ function Skills({ data }) {
         width: { xs: "100%", md: "80%", lg: "60vw" },
         height: { lg: "300px", xs: "auto" },
         marginTop: { lg: "5%", xs: "30%" },
-        marginBottom: { lg: "1%" },
+        marginBottom: { lg: "1%", xs:"15%" },
         mx: "auto",
         px: { xs: 2, md: 0 },
       }}
@@ -81,7 +80,7 @@ function Skills({ data }) {
               }}
             >
               {data.content.map((item, i) => {
-                const IconComponent = SiIcons[item.icon];
+                const IconComponent = SiIcons[`Si${item.icon}`];
                 return (
                   <Box
                     key={i}
@@ -95,7 +94,10 @@ function Skills({ data }) {
                   >
                     <IconButton sx={{ ...styles.iconHoverScale }}>
                       {IconComponent ? (
-                        <IconComponent size={{ xs: 40, lg: 55 }} color={item.color} />
+                        <IconComponent
+                          style={{ display: "block" , fontSize:"45px"}}
+                          color={item.color}
+                        />
                       ) : null}
                     </IconButton>
                     <Typography
