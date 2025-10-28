@@ -43,7 +43,7 @@ function App() {
         {media[1] && (
           <CardMedia
             component="video"
-            src={media[7].url}
+            src={media[6].url}
             autoPlay
             muted
             loop
