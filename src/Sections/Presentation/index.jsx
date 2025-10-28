@@ -33,9 +33,10 @@ function Presentation({ media , data}) {
           justifyContent: "center",
         }}
       >
+        
         <CardMedia
           component="img"
-          src={media[6].url}
+          src={media[8].url}
           sx={{
             width: { lg: "300px", xs: "200px" },
             height: { lg: "300px", xs: "200px" },
