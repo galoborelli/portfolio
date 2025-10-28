@@ -20,9 +20,8 @@ function App() {
         const [mediaResponse, textResponse] = await Promise.all([
           axios.get(`${import.meta.env.VITE_API_URL}/api/media`),
           axios.get(`${import.meta.env.VITE_API_URL}/api/data-text`)
-          
         ]);
-
+        console.log(mediaResponse.data, "mediaResponse.data");
         setMedia(mediaResponse.data);
         setDataText(textResponse.data); // ahora es objeto, no array
       } catch (error) {
