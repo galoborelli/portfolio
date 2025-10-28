@@ -38,8 +38,8 @@ function Presentation({ media , data}) {
           component="img"
           src={media[7].url}
           sx={{
-            width: { lg: "400px", xs: "200px" },
-            height: { lg: "400px", xs: "200px" },
+            width: { lg: "300px", xs: "200px" },
+            height: { lg: "300px", xs: "200px" },
             objectFit: "cover",
             borderRadius: "50%",
           }}
