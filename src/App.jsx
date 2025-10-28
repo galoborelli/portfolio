@@ -40,10 +40,10 @@ function App() {
     <>
       {/* Fondo de video */}
       <Box>
-        {media[2] && (
+        {media[1] && (
           <CardMedia
             component="video"
-            src={media[2].url}
+            src={media[1].url}
             autoPlay
             muted
             loop

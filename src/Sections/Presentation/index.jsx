@@ -35,7 +35,7 @@ function Presentation({ media , data}) {
       >
         <CardMedia
           component="img"
-          src={media[1].url}
+          src={media[6].url}
           sx={{
             width: { lg: "300px", xs: "200px" },
             height: { lg: "300px", xs: "200px" },
